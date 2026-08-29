@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inglês de Entrevista de Marketing — Lista de Espera | Alvo</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage:       #4A7C6F;
+    --sage-light: #7AAB9B;
+    --sage-pale:  #EAF2EF;
+    --sage-dark:  #2D5246;
+    --warm:       #E8DDD0;
+    --warm-deep:  #C4A882;
+    --warm-dark:  #7A6450;
+    --ink:        #1C2B26;
+    --off-white:  #FAF8F5;
+    --white:      #FFFFFF;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .label {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage);
+  }
+  .label-light { color: var(--sage-light); }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,245,0.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(28,43,38,0.07);
+  }
+  .nav-inner {
+    max-width: 1140px; margin: 0 auto;
+    padding: 22px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-word { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300; color: var(--ink); letter-spacing: 0.04em; }
+  .nav-logo-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--sage); border-left: 1px solid rgba(28,43,38,0.15);
+    padding-left: 10px; margin-left: 2px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 14px; color: var(--ink); text-decoration: none; opacity: 0.55; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .btn-nav {
+    background: var(--sage); color: var(--white) !important;
+    opacity: 1 !important; padding: 10px 22px; border-radius: 100px;
+    font-size: 13px !important; font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+  .btn-nav:hover { background: var(--sage-dark) !important; }
+
+  .nav-hamburger {
+    display: none; flex-direction: column; justify-content: center;
+    gap: 5px; width: 36px; height: 36px; cursor: pointer;
+    background: none; border: none; padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block; height: 1.5px; width: 100%;
+    background: var(--ink); border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .nav-drawer {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--off-white); z-index: 99;
+    flex-direction: column; padding: 100px 36px 48px; gap: 0;
+  }
+  .nav-drawer.open { display: flex; }
+  .nav-drawer a {
+    font-family: 'Fraunces', serif;
+    font-size: 32px; font-weight: 300; color: var(--ink);
+    text-decoration: none; padding: 16px 0;
+    border-bottom: 1px solid rgba(28,43,38,0.07);
+    display: block; opacity: 0.7; transition: opacity 0.2s;
+  }
+  .nav-drawer a:hover { opacity: 1; }
+  .nav-drawer-cta {
+    margin-top: 32px;
+    background: var(--sage) !important; color: var(--white) !important;
+    padding: 16px 28px !important; border-radius: 100px !important;
+    text-align: center !important; font-family: 'DM Sans', sans-serif !important;
+    font-size: 15px !important; font-weight: 500 !important;
+    border-bottom: none !important; opacity: 1 !important;
+  }
+
+  /* ── HERO ── */
+  .hero { background: var(--off-white); padding: 96px 0 104px; position: relative; overflow: hidden; }
+  .hero-blob {
+    position: absolute; right: -100px; top: -80px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, var(--sage-pale) 0%, transparent 65%);
+    opacity: 0.5; pointer-events: none;
+  }
+  .hero-blob-2 {
+    position: absolute; left: -80px; bottom: 0;
+    width: 360px; height: 360px; border-radius: 50%;
+    background: radial-gradient(circle, #FBF5ED 0%, transparent 65%);
+    opacity: 0.5; pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 760px; margin: 0 auto; padding: 0 60px;
+    position: relative; z-index: 1; text-align: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--sage-pale); border: 1px solid rgba(74,124,111,0.18);
+    padding: 7px 16px; border-radius: 100px;
+    font-size: 12px; font-weight: 500;
+    color: var(--sage-dark); letter-spacing: 0.04em;
+    margin-bottom: 28px;
+  }
+  .eyebrow-dot { width: 6px; height: 6px; background: var(--sage); border-radius: 50%; }
+  .hero-headline {
+    font-family: 'Fraunces', serif;
+    font-size: 56px; font-weight: 300;
+    line-height: 1.1; color: var(--ink);
+    margin: 0 auto 24px; max-width: 620px;
+  }
+  .hero-headline em { font-style: italic; color: var(--sage); }
+  .hero-sub {
+    font-size: 18px; font-weight: 300;
+    line-height: 1.68; color: rgba(28,43,38,0.62);
+    max-width: 500px; margin: 0 auto 40px;
+  }
+  .btn-primary {
+    background: var(--sage); color: var(--white);
+    padding: 15px 30px; border-radius: 100px;
+    font-size: 15px; font-weight: 500; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
+
+  /* ── DIFERENÇA — LIGHT ── */
+  .diff { background: var(--off-white); padding: 40px 0 110px; }
+  .diff-inner { max-width: 1140px; margin: 0 auto; padding: 0 60px; }
+  .diff-header { max-width: 620px; margin-bottom: 52px; }
+  .diff-headline {
+    font-family: 'Fraunces', serif; font-size: 40px; font-weight: 300;
+    line-height: 1.15; color: var(--ink); margin: 16px 0 0;
+  }
+  .diff-headline em { font-style: italic; color: var(--sage); }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .compare-card { border-radius: 20px; padding: 34px 32px; }
+  .compare-generic {
+    background: var(--white);
+    border: 1px solid rgba(28,43,38,0.07);
+  }
+  .compare-ours {
+    background: var(--ink);
+  }
+  .compare-tag {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .compare-generic .compare-tag { color: var(--warm-dark); }
+  .compare-ours .compare-tag { color: var(--sage-light); }
+  .compare-list { list-style: none; padding: 0; margin: 0; }
+  .compare-list li {
+    font-size: 15px; font-weight: 300; line-height: 1.5;
+    padding: 14px 0 14px 30px; position: relative;
+    border-bottom: 1px solid rgba(28,43,38,0.06);
+  }
+  .compare-list li:last-child { border-bottom: none; }
+  .compare-generic .compare-list li { color: rgba(28,43,38,0.68); }
+  .compare-ours .compare-list li { color: rgba(250,248,245,0.78); border-color: rgba(255,255,255,0.08); }
+  .compare-list li::before {
+    position: absolute; left: 0; top: 14px; font-size: 15px; line-height: 1.5;
+  }
+  .compare-generic .compare-list li::before { content: '✕'; color: rgba(122,100,80,0.55); }
+  .compare-ours .compare-list li::before { content: '✓'; color: var(--sage-light); }
+
+  /* ── WAITLIST — DARK (gate pattern) ── */
+  .gate { background: var(--sage-dark); padding: 110px 0; position: relative; overflow: hidden; }
+  .gate::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 340px; height: 340px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(122,171,155,0.22) 0%, transparent 65%);
+  }
+  .gate::after {
+    content: ''; position: absolute; bottom: -120px; left: -60px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,168,130,0.12) 0%, transparent 65%);
+  }
+  .gate-inner {
+    max-width: 560px; margin: 0 auto; padding: 0 60px;
+    text-align: center; position: relative; z-index: 1;
+  }
+  .gate-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--sage-light);
+    margin-bottom: 16px;
+  }
+  .gate h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 40px; font-weight: 300;
+    color: var(--off-white); margin-bottom: 14px; line-height: 1.15;
+  }
+  .gate h2 em { font-style: italic; color: var(--sage-light); }
+  .gate-desc {
+    font-size: 16px; font-weight: 300;
+    color: rgba(250,248,245,0.6); line-height: 1.65;
+    margin: 0 auto 32px; max-width: 440px;
+  }
+  .gate-form { display: flex; gap: 12px; max-width: 440px; margin: 0 auto; }
+  .gate-input {
+    flex: 1; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px; padding: 14px 22px;
+    font-size: 15px; color: var(--off-white);
+    font-family: 'DM Sans', sans-serif;
+    outline: none; transition: border-color 0.2s;
+  }
+  .gate-input::placeholder { color: rgba(255,255,255,0.35); }
+  .gate-input:focus { border-color: var(--sage-light); }
+  .btn-gate {
+    background: var(--sage); color: var(--white);
+    padding: 14px 26px; border-radius: 100px;
+    font-size: 15px; font-weight: 500;
+    border: none; cursor: pointer; white-space: nowrap;
+    transition: background 0.2s, opacity 0.2s;
+  }
+  .btn-gate:hover { background: #3f6c60; }
+  .btn-gate:disabled { opacity: 0.6; cursor: default; }
+  .gate-note { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 18px; }
+  .gate-error {
+    display: none; font-size: 13px; color: #F0B7A8;
+    margin-top: 14px; font-weight: 400;
+  }
+  .gate-error.show { display: block; }
+
+  /* Success state */
+  .gate-success { display: none; }
+  .gate-success.show { display: block; animation: fadeUp 0.5s ease both; }
+  .gate-success-icon {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: rgba(122,171,155,0.18); border: 1px solid rgba(122,171,155,0.4);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+  }
+
+  /* ── FOOTER ── */
+  footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 0; }
+  .footer-inner {
+    max-width: 1140px; margin: 0 auto; padding: 0 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo-word { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 300; color: var(--off-white); letter-spacing: 0.04em; opacity: 0.7; }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a { font-size: 13px; color: rgba(250,248,245,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(250,248,245,0.7); }
+  .footer-copy { font-size: 12px; color: rgba(250,248,245,0.2); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-eyebrow  { animation: fadeUp 0.6s ease 0.0s both; }
+  .hero-headline { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-sub      { animation: fadeUp 0.6s ease 0.2s both; }
+  .hero .btn-primary { animation: fadeUp 0.6s ease 0.3s both; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .nav-inner { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .hero { padding: 56px 0 64px; }
+    .hero-inner { padding: 0 24px; }
+    .hero-headline { font-size: 36px; }
+    .hero-sub { font-size: 16px; }
+    .hero-blob, .hero-blob-2 { display: none; }
+
+    .diff { padding: 24px 0 72px; }
+    .diff-inner { padding: 0 24px; }
+    .diff-headline { font-size: 30px; }
+    .compare { grid-template-columns: 1fr; gap: 14px; }
+
+    .gate { padding: 72px 0; }
+    .gate-inner { padding: 0 24px; }
+    .gate h2 { font-size: 30px; }
+    .gate-form { flex-direction: column; }
+    .gate-input, .btn-gate { width: 100%; border-radius: 14px; }
+
+    footer { padding: 32px 0; }
+    .footer-inner { padding: 0 24px; flex-direction: column; gap: 20px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  }
+  @media (max-width: 480px) {
+    .hero-headline { font-size: 30px; }
+    .diff-headline { font-size: 26px; }
+    .gate h2 { font-size: 26px; }
+  }
+</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alvo">
+<meta property="og:title" content="Inglês de entrevista de marketing — lista de espera">
+<meta property="og:description" content="Não é inglês genérico. É o inglês de entrevista e reunião de marketing. Entre na lista de espera e seja avisado no lançamento.">
+<meta property="og:url" content="https://learn-english.alvo.agency">
+<meta name="description" content="Não é inglês genérico nem Duolingo. É o inglês específico de entrevista e reunião de marketing. Entre na lista de espera.">
+<link rel="canonical" href="https://learn-english.alvo.agency/">
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://alvo.agency" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="22" stroke="#4A7C6F" stroke-width="1.5" fill="none"/>
+        <circle cx="24" cy="24" r="6" fill="#2D5246"/>
+        <line x1="24" y1="4" x2="24" y2="14" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="24" y1="34" x2="24" y2="44" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="4" y1="24" x2="14" y2="24" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="34" y1="24" x2="44" y2="24" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-logo-word">alvo</span>
+      <span class="nav-logo-tag">English</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#diferenca">Por que é diferente</a></li>
+      <li><a href="https://alvo.agency" target="_blank" rel="noopener">Alvo Agency ↗</a></li>
+      <li><a href="#waitlist" class="btn-nav">Entrar na lista</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="nav-drawer">
+  <a href="#diferenca" onclick="toggleNav()">Por que é diferente</a>
+  <a href="https://alvo.agency" target="_blank" rel="noopener">Alvo Agency ↗</a>
+  <a href="#waitlist" class="nav-drawer-cta" onclick="toggleNav()">Entrar na lista →</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob-2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      Em breve · Lista de espera
+    </div>
+    <h1 class="hero-headline">
+      Inglês pra entrevista de marketing.<br>
+      <em>Não pra pedir café.</em>
+    </h1>
+    <p class="hero-sub">
+      Um curso de inglês feito pra uma coisa só: você mandar bem na entrevista e na reunião de
+      marketing em inglês. Nada de vocabulário genérico — só o que decide se você pega a vaga.
+    </p>
+    <a href="#waitlist" class="btn-primary">
+      Entrar na lista de espera
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ══ POR QUE É DIFERENTE — LIGHT ══ -->
+<section class="diff" id="diferenca">
+  <div class="diff-inner">
+    <div class="diff-header reveal">
+      <div class="label">Por que não é mais um curso de inglês</div>
+      <h2 class="diff-headline">
+        Duolingo te ensina a <em>sobreviver.</em><br>
+        Isso te prepara pra <em>ser contratado.</em>
+      </h2>
+    </div>
+    <div class="compare">
+      <div class="compare-card compare-generic reveal">
+        <div class="compare-tag">Inglês genérico / apps</div>
+        <ul class="compare-list">
+          <li>Vocabulário do dia a dia: viagem, restaurante, cores</li>
+          <li>Gramática solta, sem contexto do seu trabalho</li>
+          <li>Nível "conversação" que trava na hora da pressão</li>
+          <li>Anos de estudo sem nunca simular uma entrevista real</li>
+        </ul>
+      </div>
+      <div class="compare-card compare-ours reveal" style="transition-delay:0.1s">
+        <div class="compare-tag">Inglês de entrevista de marketing</div>
+        <ul class="compare-list">
+          <li>Os termos de marketing que caem em toda entrevista lá fora</li>
+          <li>Como falar de resultados, ROAS e campanhas com naturalidade</li>
+          <li>Respostas prontas pras perguntas clássicas de recrutador</li>
+          <li>Simulação de reunião e entrevista — a pressão de verdade</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WAITLIST — DARK (gate) ══ -->
+<section class="gate" id="waitlist">
+  <div class="gate-inner">
+
+    <!-- Form state -->
+    <div id="gate-form-state">
+      <div class="gate-label">Lista de espera</div>
+      <h2>Quer ser avisado <em>no lançamento?</em></h2>
+      <p class="gate-desc">
+        Ainda não tem data nem preço — está em construção. Deixe seu e-mail e você é uma das
+        primeiras pessoas a saber quando abrir (e provavelmente com condição de fundador).
+      </p>
+      <form class="gate-form" id="waitlist-form" novalidate>
+        <input type="email" class="gate-input" id="gate-email" name="email"
+               placeholder="seu@email.com" autocomplete="email" required />
+        <button type="submit" class="btn-gate" id="gate-submit">Avise-me</button>
+      </form>
+      <p class="gate-error" id="gate-error">Confira o e-mail e tente de novo.</p>
+      <p class="gate-note">Sem spam. Um e-mail só, quando lançar.</p>
+    </div>
+
+    <!-- Success state -->
+    <div class="gate-success" id="gate-success">
+      <div class="gate-success-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7AAB9B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h2>Você está na <em>lista.</em></h2>
+      <p class="gate-desc">
+        Pronto — assim que o curso abrir, você recebe um e-mail antes de todo mundo. Enquanto isso,
+        o conteúdo gratuito continua rolando no Instagram e no LinkedIn.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="22" stroke="#7AAB9B" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <circle cx="24" cy="24" r="6" fill="#4A7C6F" opacity="0.7"/>
+        <line x1="24" y1="4"  x2="24" y2="14" stroke="#7AAB9B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="24" y1="34" x2="24" y2="44" stroke="#7AAB9B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="4"  y1="24" x2="14" y2="24" stroke="#7AAB9B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="34" y1="24" x2="44" y2="24" stroke="#7AAB9B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <span class="footer-logo-word">alvo</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#diferenca">Por que é diferente</a></li>
+      <li><a href="#waitlist">Lista de espera</a></li>
+      <li><a href="https://alvo.agency" target="_blank" rel="noopener">Alvo Agency</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Alvo. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script>
+  // ─────────────────────────────────────────────────────────────
+  //  WAITLIST ENDPOINT — Formspree
+  //  1. Crie uma conta grátis em https://formspree.io
+  //  2. Crie um novo form, copie o endpoint (ex: https://formspree.io/f/abcdwxyz)
+  //  3. Cole abaixo no lugar de 'https://formspree.io/f/YOUR_FORM_ID'
+  //  Enquanto o placeholder estiver aqui, o form mostra a mensagem de sucesso
+  //  mas NÃO envia (pra você testar o visual). Troque pra ativar o envio real.
+  // ─────────────────────────────────────────────────────────────
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  const form    = document.getElementById('waitlist-form');
+  const emailEl = document.getElementById('gate-email');
+  const submit  = document.getElementById('gate-submit');
+  const errorEl = document.getElementById('gate-error');
+
+  function showSuccess() {
+    document.getElementById('gate-form-state').style.display = 'none';
+    document.getElementById('gate-success').classList.add('show');
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    errorEl.classList.remove('show');
+    const email = emailEl.value.trim();
+
+    // Validação simples de e-mail
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailEl.style.borderColor = '#F0B7A8';
+      errorEl.textContent = 'Confira o e-mail e tente de novo.';
+      errorEl.classList.add('show');
+      return;
+    }
+    emailEl.style.borderColor = '';
+
+    // Endpoint ainda não configurado → só mostra sucesso (modo preview)
+    if (FORMSPREE_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) {
+      console.warn('[waitlist] FORMSPREE_ENDPOINT não configurado — nenhum e-mail foi enviado.');
+      showSuccess();
+      return;
+    }
+
+    // Envio real via AJAX (fica na página, sem redirect)
+    submit.disabled = true;
+    submit.textContent = 'Enviando…';
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          source: 'learn-english.alvo.agency',
+          list: 'Inglês de Entrevista — Waitlist'
+        })
+      });
+      if (res.ok) {
+        showSuccess();
+      } else {
+        throw new Error('HTTP ' + res.status);
+      }
+    } catch (err) {
+      console.error('[waitlist] falha no envio:', err);
+      submit.disabled = false;
+      submit.textContent = 'Avise-me';
+      errorEl.textContent = 'Algo deu errado. Tente de novo em instantes.';
+      errorEl.classList.add('show');
+    }
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('visible'); observer.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile nav
+  function toggleNav() {
+    const btn = document.getElementById('nav-hamburger');
+    const drawer = document.getElementById('nav-drawer');
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.getElementById('nav-hamburger').classList.remove('open');
+      document.getElementById('nav-drawer').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+</body>
+</html>
